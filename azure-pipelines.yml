@@ -41,3 +41,7 @@ steps:
     scanDirectory: '$(Build.SourcesDirectory)'
     outputFormat: 'HTML'
     useSonarQubeIntegration: false
+
+- task: MavenAuthenticate@0
+  inputs:
+    artifactsFeeds: 'thefactorynl'
