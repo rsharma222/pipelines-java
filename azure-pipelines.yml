@@ -21,6 +21,20 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    codeCoverageToolOption: 'Cobertura'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
+    checkStyleRunAnalysis: true
+    pmdRunAnalysis: true
+    findBugsRunAnalysis: true
 - task: OWASPDependencyCheck@0
   inputs:
     outputDirectory: '$(Agent.TempDirectory)/dependency-scan-results'
