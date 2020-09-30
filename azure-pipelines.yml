@@ -22,7 +22,6 @@ steps:
     goals: 'package'
 
 - task: Maven@3
-name: The Code Coverage Task
   inputs:
     mavenPomFile: 'pom.xml'
     publishJUnitResults: true
