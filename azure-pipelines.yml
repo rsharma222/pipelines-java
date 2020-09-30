@@ -52,6 +52,7 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-- task: SonarQubePublish@4
-  inputs:
-    pollingTimeoutSec: '300'
+ # The SonarQube endpoint does not exist to publish the gates results.
+ #- task: SonarQubePublish@4
+ # inputs:
+ #   pollingTimeoutSec: '300'
