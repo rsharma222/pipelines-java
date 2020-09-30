@@ -45,3 +45,9 @@ steps:
 - task: MavenAuthenticate@0
   inputs:
     artifactsFeeds: 'thefactorynl'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
